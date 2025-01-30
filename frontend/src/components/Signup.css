@@ -1,0 +1,129 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Signup Page Styling */
+.signup {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+        109.6deg,
+        rgba(112, 246, 255, 0.33) 11.2%,
+        rgba(221, 108, 241, 0.26) 42%,
+        rgba(229, 106, 253, 0.71) 71.5%,
+        rgba(123, 183, 253, 1) 100.2%
+    );
+}
+
+.container {
+    background-color: white;
+    width: 90%;
+    max-width: 350px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup-text {
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+}
+
+/* Label Styling */
+label {
+    width: 100%;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+    text-align: left;
+}
+
+/* Input Field Styling */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Button Styling */
+.signup-button {
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.signup-button:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+/* Login Link Styling */
+.login-link {
+    margin-top: 15px;
+    font-size: 14px;
+    color: black;
+    text-align: center;
+}
+
+.login-link span {
+    font-size: 14px;
+    color: #555;
+}
+
+.login-link a {
+    color: rgb(8, 8, 8);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .signup-text {
+        font-size: 24px;
+    }
+
+    .signup-button {
+        font-size: 14px;
+    }
+
+    .login-link a {
+        font-size: 10px;
+    }
+}

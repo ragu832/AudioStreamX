@@ -1,0 +1,63 @@
+/* Home page styles */
+.Home {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(109.6deg, rgba(112, 246, 255, 0.33) 11.2%, rgba(221, 108, 241, 0.26) 42%, rgba(229, 106, 253, 0.71) 71.5%, rgba(123, 183, 253, 1) 100.2%);
+    color: black;
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-size: 30px;
+    font-weight: bold;
+    flex-direction: column; /* Stack the text and button vertically */
+}
+
+.Home .text-container {
+    display: flex;
+    flex-direction: column; /* Ensure the text elements stack vertically */
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px; /* Space between the text and the button */
+    color: black;
+    text-align: center; /* Ensure the text is centered */
+    font-size: 30px;
+    font-weight: bold;
+    animation: bounce 2s ease-in-out infinite; /* Apply bounce animation */
+}
+
+/* Keyframes for the bounce effect */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0); /* No vertical movement */
+    }
+    50% {
+        transform: translateY(-10px); /* Move upwards slightly */
+    }
+}
+
+/* Button styling */
+.Get-start {
+    padding: 10px 30px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 30px; /* Rounded corners */
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease; /* Smooth transition for transform */
+}
+
+/* Button hover effect for "drop-up" */
+.Get-start:hover {
+    background-color: #333; /* Darker shade of black on hover */
+    transform: translateY(-5px); /* "Drop up" effect on hover */
+}
