@@ -19,7 +19,7 @@ const Mylibrary = () => {
                 return;
             }
 
-            const response = await fetch('http://localhost:5003/api/library', {
+            const response = await fetch('https://audiostreamx.onrender.com/api/library', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -44,7 +44,7 @@ const Mylibrary = () => {
             const token = localStorage.getItem('token');
             if (!token) return;
 
-            const response = await fetch(`http://localhost:5003/api/library/${songId}`, {
+            const response = await fetch(`https://audiostreamx.onrender.com/api/library/${songId}`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${token}`

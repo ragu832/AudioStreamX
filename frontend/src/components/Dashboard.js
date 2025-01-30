@@ -14,7 +14,7 @@ const Dashboard = () => {
 
   const fetchDiscoverSongs = async () => {
     try {
-      const response = await fetch('http://localhost:5003/api/jamendo/discover');
+      const response = await fetch('https://audiostreamx.onrender.com/api/jamendo/discover');
       const data = await response.json();
       setSongs(data);
     } catch (error) {
@@ -34,7 +34,7 @@ const Dashboard = () => {
         return;
       }
 
-      const response = await fetch('http://localhost:5003/api/library/add', {
+      const response = await fetch('hhttps://audiostreamx.onrender.com/api/library/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

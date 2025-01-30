@@ -10,7 +10,7 @@ const Search = () => {
         if (!query) return;
 
         try {
-            const response = await fetch(`http://localhost:5003/api/jamendo/search?q=${query}`);
+            const response = await fetch(`https://audiostreamx.onrender.com/api/jamendo/search?q=${query}`);
             const results = await response.json();
             setSongs(results);
         } catch (error) {
@@ -27,7 +27,7 @@ const Search = () => {
                 return;
             }
 
-            const response = await fetch('http://localhost:5003/api/library/add', {
+            const response = await fetch('https://audiostreamx.onrender.com/api/library/add', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
