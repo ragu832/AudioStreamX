@@ -1,18 +1,16 @@
-// src/components/SplashScreen.js
 import React, { useEffect } from "react";
 import './SplashScreen.css';
 import { splashAnim } from "../Animation/splasAnimation";
-import { useNavigate } from "react-router-dom"; // Import useNavigate hook
+import { useNavigate } from "react-router-dom"; 
 
 const SplashScreen = () => {
-  const navigate = useNavigate(); // Initialize the navigate function
-
+  const navigate = useNavigate(); 
   useEffect(() => {
-    splashAnim(); // Trigger the splash screen animation
+    splashAnim(); 
     setTimeout(() => {
-      navigate("/home"); // After 3 seconds, navigate to the home page
-    }, 5000); // Set the delay (3 seconds for splash screen)
-  }, [navigate]); // Empty dependency array ensures this runs only once
+      navigate("/home");
+    }, 5000);
+  }, [navigate]);
 
   return (
     <div className="splash">

@@ -1,4 +1,3 @@
-// src/Animation/splasAnimation.js
 import gsap from "gsap";
 
 export const splashAnim = () => {
@@ -13,7 +12,7 @@ export const splashAnim = () => {
     opacity: 1,
     y: 0,
     duration: 3,
-    delay: 2,  // This delay gives time for the initial animation to finish
+    delay: 2,
     ease: "power3.out",
   });
 };

@@ -8,9 +8,8 @@ const Signup = () => {
     email: '',
     password: ''
   });
-  const [message, setMessage] = useState(''); // Add state for message
-
-  const { name, email, password } = formData;
+  const [message, setMessage] = useState('');
+  const { email, password } = formData;
 
   const handleChange = (e) => {
     setFormData({

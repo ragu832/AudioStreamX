@@ -1,4 +1,3 @@
-// src/components/Home.js
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import './Home.css';
@@ -7,7 +6,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   const handleStart = () => {
-    navigate('/Login'); // Navigate to the Playlist component route
+    navigate('/Login'); 
   };
 
   return (

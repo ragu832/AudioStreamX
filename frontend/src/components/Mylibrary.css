@@ -5,25 +5,23 @@ html, body {
     box-sizing: border-box;
 }
 
-/* Dashboard Styles */
 .Mylibrary {
     font-family: Arial, sans-serif;
     color: black;
     background: linear-gradient(135deg, rgba(112, 246, 255, 0.33) 11.2%, rgba(221, 108, 241, 0.26) 42%, rgba(229, 106, 253, 0.71) 71.5%, rgba(123, 183, 253, 1) 100.2%);
-    min-height: 100vh; /* Full viewport height */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Align items to the top */
+    justify-content: flex-start; 
     padding: 20px;
     gap: 20px;
 }
 
-/* Title */
 .Mylibrary h1 {
     font-size: 2rem;
     margin: 0;
     position: absolute;
-    top: 20px; /* Place in top-left corner */
+    top: 20px; 
     left: 20px;
     color: black;
 }

@@ -5,7 +5,6 @@ const Playlist = () => {
     const [playlists, setPlaylists] = useState([]);
 
     useEffect(() => {
-        // Fetch playlists from the backend
         axios.get('http://localhost:5000/playlists')
             .then((response) => {
                 setPlaylists(response.data);
