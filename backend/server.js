@@ -17,7 +17,7 @@ const app = express();
 const allowedOrigins = [
   'http://localhost:3000', 
   'http://127.0.0.1:3000',
-  'https://audiostreamx.onrender.com'
+  'https://audiostreamx-1.onrender.com'
 ];
 
 app.use(cors({
