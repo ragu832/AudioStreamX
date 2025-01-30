@@ -1,34 +1,53 @@
 import express from 'express';
+import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
+import dotenv from 'dotenv';
 import User from './userModel.js';
 
-const router = express.Router();
+dotenv.config();
 
-// Signup route
-router.post('/signup', async (req, res) => {
+const router = express.Router();
+const JWT_SECRET = process.env.JWT_SECRET || 'your-default-secret-key';
+
+router.post('/login', async (req, res) => {
     const { email, password } = req.body;
 
     try {
-        const existingUser = await User.findOne({ email });
-        if (existingUser) {
-            return res.status(400).json({ message: 'User already exists' });
+        if (!email || !password) {
+            return res.status(400).json({ message: 'Email and password are required' });
         }
 
-        const hashedPassword = await bcrypt.hash(password, 10);
+        const user = await User.findOne({ email });
+        if (!user) {
+            return res.status(400).json({ message: 'User not found' });
+        }
 
-        const newUser = new User({
-            email,
-            password: hashedPassword,
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) {
+            return res.status(400).json({ message: 'Invalid credentials' });
+        }
+
+        const token = jwt.sign(
+            { userId: user._id }, 
+            JWT_SECRET,
+            { expiresIn: '1h' }
+        );
+
+        res.json({
+            message: 'Logged in successfully',
+            token,
+            user: { 
+                id: user._id, 
+                email: user.email, 
+                name: user.name || 'User'  
+            },
         });
-
-        await newUser.save();
-
-        console.log(newUser)
-
-        res.status(201).json({ message: 'User registered successfully' });
     } catch (error) {
-        console.error('Error during signup:', error);
-        res.status(500).json({ message: 'Server error' });
+        console.error('Login error:', error);
+        res.status(500).json({ 
+            message: 'Server error',
+            details: process.env.NODE_ENV === 'development' ? error.message : undefined
+        });
     }
 });
 
