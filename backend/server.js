@@ -9,6 +9,7 @@ import registrationRouter from './registration.js';
 import loginRouter from './login.js';
 import { authenticateToken } from './auth.js';
 import jamendoRoutes from './jamendoRoutes.js';
+import libraryRoutes from './routes/libraryRoutes.js';
 
 dotenv.config();
 
@@ -45,6 +46,7 @@ app.use('/', loginRouter);
 app.use('/api/auth', authRoutes);
 app.use('/api', registrationRouter);
 app.use('/api/jamendo', jamendoRoutes);
+app.use('/api', libraryRoutes);
 
 // Protected route example
 app.get('/api/protected', authenticateToken, (req, res) => {

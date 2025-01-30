@@ -1,32 +1,4 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.Mylibrary {
-    font-family: Arial, sans-serif;
-    color: black;
-    background: linear-gradient(135deg, rgba(112, 246, 255, 0.33) 11.2%, rgba(221, 108, 241, 0.26) 42%, rgba(229, 106, 253, 0.71) 71.5%, rgba(123, 183, 253, 1) 100.2%);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; 
-    padding: 20px;
-    gap: 20px;
-}
-
-.Mylibrary h1 {
-    font-size: 2rem;
-    margin: 0;
-    position: absolute;
-    top: 20px; 
-    left: 20px;
-    color: black;
-}
-
-.mylibrary {
+.search-container {
     min-height: 100vh;
     width: 100%;
     background: linear-gradient(109.6deg, rgba(112, 246, 255, 0.33) 11.2%, rgba(221, 108, 241, 0.26) 42%, rgba(229, 106, 253, 0.71) 71.5%, rgba(123, 183, 253, 1) 100.2%);
@@ -35,13 +7,57 @@ html, body {
     overflow-x: hidden;
 }
 
-.title {
+.search-container h2 {
     color: black;
     text-align: center;
     margin-bottom: 30px;
     font-size: 2.5rem;
     font-weight: bold;
     animation: bounce 2s ease-in-out infinite;
+}
+
+.search-box {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px black;
+}
+
+.search-box button {
+    padding: 12px 30px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.search-box button:hover {
+    transform: translateY(-2px);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .message {
@@ -53,19 +69,6 @@ html, body {
     color: white;
     max-width: 400px;
     animation: fadeIn 0.3s ease-in;
-}
-
-.empty-library {
-    text-align: center;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    color: black;
-    font-size: 18px;
-    font-weight: bold;
-    backdrop-filter: blur(10px);
-    max-width: 600px;
-    margin: 40px auto;
 }
 
 .songs-grid {
@@ -118,10 +121,6 @@ html, body {
     font-size: 14px;
 }
 
-.song-info .album {
-    font-style: italic;
-}
-
 .song-controls {
     display: flex;
     flex-direction: column;
@@ -133,7 +132,7 @@ html, body {
     height: 32px;
 }
 
-.remove-btn {
+.add-to-library-btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -149,7 +148,7 @@ html, body {
     transition: all 0.3s ease;
 }
 
-.remove-btn:hover {
+.add-to-library-btn:hover {
     transform: translateY(-2px);
     background-color: rgba(0, 0, 0, 0.8);
 }
@@ -169,18 +168,24 @@ html, body {
 }
 
 @media (max-width: 768px) {
-    .title {
+    .search-container h2 {
         font-size: 2rem;
+    }
+
+    .search-box {
+        flex-direction: column;
+        padding: 15px;
+        margin: 20px;
+    }
+
+    .search-box input,
+    .search-box button {
+        width: 100%;
+        padding: 10px 20px;
     }
 
     .songs-grid {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         padding: 10px;
-    }
-
-    .empty-library {
-        margin: 20px;
-        padding: 20px;
-        font-size: 16px;
     }
 }

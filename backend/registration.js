@@ -36,11 +36,14 @@ router.post('/signup', async (req, res) => {
 
         await user.save();
 
-        // Generate JWT token
+        // Generate JWT token with userId
         const token = jwt.sign(
-            { userId: user._id },
+            { 
+                userId: user._id,
+                email: user.email
+            },
             JWT_SECRET,
-            { expiresIn: '1h' }
+            { expiresIn: '24h' }
         );
 
         res.status(201).json({
